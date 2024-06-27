@@ -1,0 +1,55 @@
+{
+    "create": {
+        "type": "object",
+        "properties": {
+            "code": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            }
+        },
+        "required": ["code", "description"],
+        "additionalProperties": false
+    },
+    "update": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer"
+            },
+            "code": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+    },
+    "delete": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer"
+            }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+    },
+    "get": {
+        "type": "object",
+        "properties": {
+            "initial_date": {
+                "type": ["string", "null"],
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "final_date": {
+                "type": ["string", "null"],
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            }
+        },
+        "required": ["initial_date", "final_date"]
+    }
+}

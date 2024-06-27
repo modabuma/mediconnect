@@ -1,0 +1,51 @@
+{
+    "create": {
+        "type": "object",
+        "properties": {
+            "sub_symptom_id": {
+                "type": "integer"
+            },
+            "appointment_date": {
+                "type": "string"
+            },
+            "id_doctor": {
+                "type": "integer"
+            },
+            "user_id": {
+                "type": "integer"
+            },
+            "hour" :{
+                "type": "string"
+            }
+        },
+        "required": [
+            "sub_symptom_id", "appointment_date", "id_doctor",
+            "user_id", "hour"
+        ],
+        "additionalProperties": false
+    },
+    "delete": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer"
+            }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+    },
+    "get": {
+        "type": "object",
+        "properties": {
+            "initial_date": {
+                "type": ["string", "null"],
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "final_date": {
+                "type": ["string", "null"],
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            }
+        },
+        "required": ["initial_date", "final_date"]
+    }
+}

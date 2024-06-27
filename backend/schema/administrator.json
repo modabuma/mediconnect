@@ -1,0 +1,141 @@
+{
+    "send_verification_code": {
+        "type": "object",
+        "properties": {
+            "email": {
+                "type": "string",
+                "pattern": "^\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b$"
+            }
+        },
+        "required": ["email"],
+        "additionalProperties": false
+    },
+    "verify_code": {
+        "type": "object",
+        "properties": {
+            "code": {
+                "type": "integer"
+            }
+        },
+        "required": ["code"],
+        "additionalProperties": false
+    },
+    "create_users": {
+        "type": "object",
+        "properties": {
+            "membership_id": {
+                "type": "integer"
+            },
+            "role": {
+                "type": "integer"
+            },
+            "email": {
+                "type": "string",
+                "pattern": "^\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b$"
+            },
+            "password": {
+                "type": "string"
+            },
+            "document": {
+                "type": "string"
+            },
+            "document_type": {
+                "type": "integer"
+            },
+            "names": {
+                "type": "string"
+            },
+            "lastnames": {
+                "type": "string"
+            },
+            "department": {
+                "type": "integer"
+            },
+            "city": {
+                "type": "integer"
+            },
+            "address": {
+                "type": "string"
+            },
+            "phone": {
+                "type": "integer"
+            }
+        },
+        "required": [
+            "membership_id", "role", "email",
+            "password", "document", "document_type",
+            "names", "lastnames", "department", "city",
+            "address", "phone"
+        ],
+        "additionalProperties": false
+    },
+    "update_users": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer"
+            },
+            "membership_id": {
+                "type": "integer"
+            },
+            "email": {
+                "type": "string",
+                "pattern": "^\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b$"
+            },
+            "document": {
+                "type": "string"
+            },
+            "document_type": {
+                "type": "integer"
+            },
+            "names": {
+                "type": "string"
+            },
+            "lastnames": {
+                "type": "string"
+            },
+            "department": {
+                "type": "integer"
+            },
+            "city": {
+                "type": "integer"
+            },
+            "address": {
+                "type": "string"
+            },
+            "phone": {
+                "type": "integer"
+            }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+    },
+    "delete_users": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer"
+            }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+    },
+    "get_users": {
+        "type": "object",
+        "properties": {
+            "email": {
+                "type": ["string", "null"],
+                "pattern": "^\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b$"
+            },
+            "initial_date": {
+                "type": ["string", "null"],
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "final_date": {
+                "type": ["string", "null"],
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            }
+        },
+        "required": ["initial_date", "final_date"]
+    }
+}
